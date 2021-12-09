@@ -13,6 +13,22 @@ window.addEventListener('load', (event) => {
           source.start();
         };
       })();
+
+    document.addEventListener('keydown', (event) => {
+        switch (event.key) {
+            case 'h': audioPlay('samples/Hat.wav');
+                break;
+            case 't': audioPlay('samples/Tom.wav');
+                break;
+            case 's': audioPlay('samples/Snare.wav');
+                break;
+            case 'k': audioPlay('samples/Kick.wav');
+                break;
+            default: 
+                break;
+        }
+        console.log(`key=${event.key},code=${event.code}`);
+    });
       
     document.getElementById('hat').onclick = () => audioPlay('samples/Hat.wav');
     document.getElementById('tom').onclick = () => audioPlay('samples/Tom.wav');
